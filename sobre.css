@@ -1,0 +1,195 @@
+:root {
+    --primary: #333333;
+    --accent: #ffd700;
+    --light: #f5f5f5;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: 
+      linear-gradient(
+        45deg,
+        rgba(200, 200, 200, 0.5) 25%,
+        transparent 25%
+      ),
+      linear-gradient(
+        -45deg,
+        rgba(220, 220, 220, 0.5) 25%,
+        transparent 25%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 75%,
+        rgba(200, 200, 200, 0.5) 75%
+      );
+    background-size: 100px 100px;
+    background-color: #e0e0e0;
+    position: relative;
+    color: var(--primary);
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .header {
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, #333333 25%, #444444 25%, #444444 50%, #333333 50%, #333333 75%, #444444 75%, #444444 100%);
+    background-size: 56.57px 56.57px;
+    animation: headerGradient 3s linear infinite;
+  }
+  
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+    opacity: 0.1;
+  }
+  
+  .header h1 {
+    position: relative;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+  }
+  
+  .header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent);
+    animation: underlineWidth 2s ease-in-out infinite;
+  }
+  
+  @keyframes headerGradient {
+    0% { background-position: 0 0; }
+    100% { background-position: 56.57px 0; }
+  }
+  
+  @keyframes underlineWidth {
+    0%, 100% { width: 100px; }
+    50% { width: 150px; }
+  }
+  
+  .nav {
+    background: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav a:hover {
+    color: var(--accent);
+  }
+  
+  .content-section {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 4rem auto;
+    max-width: 1000px;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .book-cover {
+    float: right;
+    margin: 0 0 1.2rem 1.2rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+  }
+  
+  .section-title {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.5rem;
+  }
+  
+  .content-text {
+    line-height: 1.8;
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .review-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--accent);
+  }
+  
+  .review-source {
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .quote {
+    font-style: italic;
+    color: #666;
+    padding: 1rem;
+    border-left: 3px solid #ddd;
+    margin: 1rem 0;
+  }
+  
+  .awards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .award-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .award-year {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
